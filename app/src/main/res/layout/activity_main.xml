@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/text_adres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adres:" />
+
+        <EditText
+            android:id="@+id/editAdres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minLines="4"/>
+    </TableRow>
+
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pobierz informacje" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rozmiar pliku" />
+
+            <TextView
+                android:id="@+id/editSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Typ pliku" />
+
+            <TextView
+                android:id="@+id/editType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttonDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pobierz plik" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textProgres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pobrano bajtów" />
+
+        <TextView
+            android:id="@+id/editProgres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:text="0"
+
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+</LinearLayout>
