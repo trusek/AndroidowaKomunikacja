@@ -81,8 +81,6 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        requestPermission();
-
         final Animation animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
         final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.anim_alpha);
 
@@ -112,15 +110,16 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
                 v.startAnimation(animTranslate);
                 url = editUrl.getText().toString();
                 if(CanIClick()){
+                    requestPermission();
                     MojaIntentService.pobiezInformacje(
                             MainActivity.this, //kontekst
                             url); //url
                 }
             }
         });
-
     }
 
+    //funkcja sprawdzająca czy jest podany adres
     private boolean CanIClick() {
         //jeśli adres jest podany
         if (editUrl.getText().toString().isEmpty()){
@@ -165,6 +164,9 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
 
             editProgress.setText(Long.toString(progresInfo.Pobrano));
             progressBar.setProgress(progresInfo.mProgres);
+            if(progressBar.getProgress() == 100){
+                Toster("Pobieranie zakończono");
+            }
         }
     };
     @Override //zarejestrowanie odbiorcy
@@ -181,17 +183,9 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
 
     private static final int REQUEST_WRITE_PERMISSION = 786;
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == REQUEST_WRITE_PERMISSION && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-        }
-    }
-
     private void requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_WRITE_PERMISSION);
-        } else {
         }
     }
 

@@ -47,7 +47,7 @@ public class MojaIntentService extends IntentService {
             //sprawdzenie o jaką akcję chodzi
             if (AKCJA_DOWNLOAD.equals(action)) {
                 String mAdres = intent.getStringExtra("url");
-                //wykonanie zadania
+                //pobranie pliku
                 HttpURLConnection polaczenie = null;
                 try {
                     Log.d("incest service", "rozpoczynam ściąganie pliku");
@@ -100,12 +100,11 @@ public class MojaIntentService extends IntentService {
         Log.d("incest service", "usługa wykonała zadanie");
     }
 
+    //procedura wysylająca komunikat
     void wyslijBroadcast(){
         Intent zamiar = new Intent(POWIADOMIENIE);
         progresInfo.mProgres = (int) (mPobranychBajtow * 100 / mRozmiar);
         progresInfo.Pobrano = mPobranychBajtow;
-        //zamiar.putExtra(INFO,mPobranychBajtow);
-        //zamiar.putExtra(PROGRES, w);
         zamiar.putExtra(INFO,progresInfo);
         sendBroadcast(zamiar);
     }
