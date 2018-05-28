@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/black">
 
     <TableRow
         android:layout_width="match_parent"
@@ -15,7 +16,8 @@
             android:id="@+id/text_adres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Adres:" />
+            android:text="Adres:"
+            android:textColor="@color/textColor"/>
 
         <EditText
             android:id="@+id/editAdres"
@@ -24,14 +26,15 @@
             android:layout_marginLeft="10dp"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:minLines="4"/>
+            android:minLines="4"
+            android:textColor="@color/textColor"/>
     </TableRow>
 
     <Button
         android:id="@+id/buttonInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pobierz informacje" />
+        android:text="Pobierz informacje"/>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -45,7 +48,8 @@
                 android:id="@+id/textSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rozmiar pliku" />
+                android:text="Rozmiar pliku"
+                android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/editSize"
@@ -54,7 +58,8 @@
                 android:layout_marginLeft="10dp"
                 android:text="0"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
 
         </TableRow>
 
@@ -66,7 +71,8 @@
                 android:id="@+id/textType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Typ pliku" />
+                android:text="Typ pliku"
+                android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/editType"
@@ -74,7 +80,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
 
         </TableRow>
 
@@ -84,7 +91,8 @@
         android:id="@+id/buttonDownload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pobierz plik" />
+        android:text="Pobierz plik"
+/>
 
     <TableRow
         android:layout_width="match_parent"
@@ -94,18 +102,25 @@
             android:id="@+id/textProgres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pobrano bajtów" />
+            android:text="Pobrano bajtów"
+            android:textColor="@color/textColor"/>
 
         <TextView
             android:id="@+id/editProgres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-
+            android:textColor="@color/textColor"
             android:text="0"
 
             android:textSize="18sp"
             android:textStyle="bold" />
     </TableRow>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
